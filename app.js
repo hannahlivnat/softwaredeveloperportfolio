@@ -8,8 +8,8 @@ class WorkSample extends React.Component {
         </div>
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4"><i className="material-icons right">more_vert</i></span>
-            <p><a href="{sample.githublink}">View Code</a></p>
-            <p><a href="{sample.deploylink}">View Live App</a></p>
+            <p><a href={sample.githublink} target="_blank">View Code</a></p>
+            <p><a href={sample.deploylink} target="_blank">View Live App</a></p>
           </div>
           <div className="card-reveal">
           <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
