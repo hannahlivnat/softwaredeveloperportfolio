@@ -1,7 +1,10 @@
-.brand-logo {
-}
 .nav-items {
   li a {
-    color: black;
+    color: $blue-green;
+
+    &:hover {
+      background-color: lighten($blue-green, 50%);
+      cursor: pointer;
+    }
   }
 }
