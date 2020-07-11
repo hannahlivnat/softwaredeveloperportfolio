@@ -21,6 +21,7 @@
 }
 .containerdiv .workheader {
   grid-area: work;
+  padding-top: 5rem;
 }
 .containerdiv footer {
   grid-area: footer;

@@ -42,7 +42,6 @@ class WorkSamples extends React.Component {
       <div className="row worksamples">
         {
           samples.map((sample) => {
-            console.log(sample);
             return <WorkSample sample={sample}/>
           })
         
@@ -85,7 +84,7 @@ class Nav extends React.Component {
   render = () => {
     return <nav className="transparent">
       <div className="nav-wrapper">
-        <div className="brand-logo"><h4>Hannah Livnat</h4></div>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
         <ul className="nav-items right hide-on-med-and-down">
           <li><a href="#worksection">My Work</a></li>
           <li><a href="https://docs.google.com/document/d/1xSRm-doSGdCZL6TNkbtThkgDKfl-YvMtUMfm-lZPj3Q/export?format=pdf">Download Resume</a></li>
@@ -149,6 +148,12 @@ class App extends React.Component {
     return <div className="containerdiv">
       <Header />
       <Nav />
+      {/* mobile nav links */}
+      <ul className="sidenav" id="mobile-demo">
+        <li><a href="#worksection">My Work</a></li>
+        <li><a href="https://docs.google.com/document/d/1xSRm-doSGdCZL6TNkbtThkgDKfl-YvMtUMfm-lZPj3Q/export?format=pdf">Download Resume</a></li>
+        <li><a href="mailto:hannahlivnat@gmail.com">Email Me</a></li>
+      </ul>
       <AboutMe />
       <WorkSamples samples={this.state.worksamples} />
       <Footer />
