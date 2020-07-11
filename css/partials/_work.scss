@@ -1,20 +1,27 @@
-.viewworkh2 {
-  font-family: $opensans;
-  text-transform: uppercase;
-  color: $blue-green;
-  letter-spacing: .04rem;
-  font-size: 4rem;
-  text-shadow: 2px 2px 3px $light-pink;
-  margin: 3rem 0 6rem 0;
+.workheader {
+
+  .viewworkh2 {
+    @include bp(sm) {
+      font-size: 3rem;
+    }
+    font-family: $opensans;
+    text-transform: uppercase;
+    color: $blue-green;
+    letter-spacing: .04rem;
+    font-size: 4rem;
+    margin: 3rem 0 6rem 0;
+  }
+
+  .worksamples {
+    @include bp(sm) {
+      width: 90%;
+    }
+    width: 60%;
+    margin: auto;
+  }
+
 }
 
-.worksamples {
-  @include bp(sm) {
-    width: 90%;
-  }
-  width: 60%;
-  margin: auto;
-}
 .card-image {
   position: relative;
   max-height: 600px;
@@ -22,6 +29,39 @@
     width: 100%;
     height: 100%;
     position: absolute;
+  }
+}
+
+.card-reveal {
+  place-content: center;
+  overflow-x: hidden;
+
+  p {
+    width: 80%;
+    display: block;
+    margin: 5rem auto 2rem auto;
+    font-family: $ptmono;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: .02rem;
+    background-color: $very-light-green;
+    padding: 10px 5px;
+  }
+
+  ul {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    li {
+      color: $dark-pink;
+      font-family: $opensans;
+      font-size: 1rem;
+      margin: 1rem;
+
+    }
   }
 }
 

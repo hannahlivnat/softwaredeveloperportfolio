@@ -1,4 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Mono");
+.containerdiv {
+  display: grid;
+  grid-template-rows: 75vh 10vh auto 1fr 5vh;
+  grid-template-columns: 100%;
+  grid-template-areas: "header" "nav" "aboutme" "work" "footer";
+}
+@media only screen and (max-width: 620px) {
+  .containerdiv {
+    grid-template-rows: 50vh 10vh auto 1fr 5vh;
+  }
+}
+.containerdiv header {
+  grid-area: header;
+}
+.containerdiv nav {
+  grid-area: nav;
+}
+.containerdiv .about-me {
+  grid-area: aboutme;
+}
+.containerdiv .workheader {
+  grid-area: work;
+}
+.containerdiv footer {
+  grid-area: footer;
+  background-color: #a6756e;
+  color: #f8f9fc;
+  font-family: "PT Mono", monospace;
+  display: grid;
+  place-items: center;
+}
+
 .tab {
   padding-left: 20px;
 }
@@ -12,8 +44,6 @@
 }
 
 header {
-  width: 100%;
-  height: 75vh;
   background-color: #f8f9fc;
   background: no-repeat linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../assets/headerrightimage.jpg");
   background-size: cover;
@@ -25,9 +55,14 @@ header h4, header h6 {
   font-family: "Open Sans", sans-serif;
   font-size: 6rem;
   color: #f8f9fc;
-  text-shadow: 2px 2px 4px #5a726e;
+  text-shadow: 1px 1px 2px #f7cfd5;
   margin: 0.4rem 0;
   padding: 0;
+}
+@media only screen and (max-width: 620px) {
+  header h4, header h6 {
+    font-size: 3rem;
+  }
 }
 header .period {
   color: #a6756e;
@@ -36,6 +71,11 @@ header .period {
 }
 header h6 {
   font-size: 2.5rem;
+}
+@media only screen and (max-width: 620px) {
+  header h6 {
+    font-size: 1.5rem;
+  }
 }
 
 .about-me {
@@ -67,6 +107,11 @@ header h6 {
   width: 75%;
   box-shadow: 2px 2px 4px #ccc;
 }
+@media only screen and (max-width: 620px) {
+  .code-snippet-holder .code-snippet {
+    width: 90%;
+  }
+}
 .code-snippet-holder .code-snippet .outer {
   padding-left: 10px;
 }
@@ -90,10 +135,20 @@ header h6 {
   color: #000;
   font-size: 3rem;
 }
+@media only screen and (max-width: 620px) {
+  .lets-connect h4, .lets-connect header h6, header .lets-connect h6 {
+    font-size: 2rem;
+  }
+}
 .lets-connect .connect-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+@media only screen and (max-width: 620px) {
+  .lets-connect .connect-icons {
+    width: 40px;
+  }
 }
 .lets-connect a {
   padding: 0 0.2rem;
@@ -102,22 +157,25 @@ header h6 {
   cursor: pointer;
 }
 
-.viewworkh2 {
+.workheader .viewworkh2 {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #5a726e;
   letter-spacing: 0.04rem;
   font-size: 4rem;
-  text-shadow: 2px 2px 3px #f7cfd5;
   margin: 3rem 0 6rem 0;
 }
-
-.worksamples {
+@media only screen and (max-width: 620px) {
+  .workheader .viewworkh2 {
+    font-size: 3rem;
+  }
+}
+.workheader .worksamples {
   width: 60%;
   margin: auto;
 }
 @media only screen and (max-width: 620px) {
-  .worksamples {
+  .workheader .worksamples {
     width: 90%;
   }
 }
@@ -130,6 +188,35 @@ header h6 {
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.card-reveal {
+  place-content: center;
+  overflow-x: hidden;
+}
+.card-reveal p {
+  width: 80%;
+  display: block;
+  margin: 5rem auto 2rem auto;
+  font-family: "PT Mono", monospace;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.02rem;
+  background-color: #ded7c4;
+  padding: 10px 5px;
+}
+.card-reveal ul {
+  width: 90%;
+  margin: 3rem auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.card-reveal ul li {
+  color: #a6756e;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  margin: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

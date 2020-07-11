@@ -1,3 +1,11 @@
+class Footer extends React.Component {
+  render = () => {
+    return <footer>
+      @2020 Hannah Livnat
+    </footer>
+  }
+}
+
 class WorkSample extends React.Component {
   render = () => {
     const { sample } = this.props;
@@ -142,7 +150,8 @@ class App extends React.Component {
       <Header />
       <Nav />
       <AboutMe />
-      <WorkSamples samples={this.state.worksamples}/>
+      <WorkSamples samples={this.state.worksamples} />
+      <Footer />
     </div>
   }
 }

@@ -22,6 +22,9 @@
   place-items: center;
 
   .code-snippet {
+    @include bp(sm) {
+      width: 90%;
+    }
     background-color: $dark-pink;
     padding: 1rem .2rem;
     width: 75%;
@@ -51,6 +54,9 @@
   justify-content: center;
 
   h4 {
+    @include bp(sm) {
+      font-size: 2rem;
+    }
     font-family: $opensans;
     text-transform: uppercase;
     color: #000;
@@ -58,6 +64,9 @@
   }
 
   .connect-icons {
+    @include bp(sm) {
+      width: 40px;
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
