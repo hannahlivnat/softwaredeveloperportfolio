@@ -124,7 +124,7 @@ class App extends React.Component {
         techStack: ["React", "Sass", "CSS", "MaterializeCSS", "JavaScript"],
         img: "../assets/portfolioshot.png",
         githublink: "https://github.com/hannahlivnat/softwaredeveloperportfolio",
-        deploylink: "#"
+        deploylink: "https://hannahlivnat-softwaredeveloper-portfolio.netlify.app/"
       },
       {
         name: "SimplyBudget",
