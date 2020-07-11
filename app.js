@@ -80,11 +80,10 @@ class AboutMe extends React.Component {
 }
 
 class Nav extends React.Component {
-
   render = () => {
     return <nav className="transparent">
       <div className="nav-wrapper">
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+        <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons black-text">menu</i></a>
         <ul className="nav-items right hide-on-med-and-down">
           <li><a href="#worksection">My Work</a></li>
           <li><a href="https://docs.google.com/document/d/1xSRm-doSGdCZL6TNkbtThkgDKfl-YvMtUMfm-lZPj3Q/export?format=pdf">Download Resume</a></li>
