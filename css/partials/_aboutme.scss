@@ -1,0 +1,73 @@
+.about-me {
+  @include bp(1100px) {
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: 
+      "code"
+      "connect";
+  }
+  display: grid;
+  height: 75vh;
+  width: 90%;
+  margin: auto;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "code connect";
+}
+
+.code-snippet-holder {
+  grid-area: code;
+  display: grid;
+  place-items: center;
+
+  .code-snippet {
+    background-color: $dark-pink;
+    padding: 1rem .2rem;
+    width: 75%;
+    box-shadow: 2px 2px 4px #ccc;
+    
+    .outer {
+      padding-left: 10px;
+    }
+
+    p {
+      font-family: $ptmono;
+      color: $white;
+      letter-spacing: .02rem;
+      line-height: 2.5rem;
+
+    }
+  }
+
+}
+
+
+.lets-connect {
+  grid-area: connect;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h4 {
+    font-family: $opensans;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 3rem;
+  }
+
+  .connect-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  a {
+
+    padding: 0 .2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

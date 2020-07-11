@@ -1,0 +1,27 @@
+.viewworkh2 {
+  font-family: $opensans;
+  text-transform: uppercase;
+  color: $blue-green;
+  letter-spacing: .04rem;
+  font-size: 4rem;
+  text-shadow: 2px 2px 3px $light-pink;
+  margin: 3rem 0 6rem 0;
+}
+
+.worksamples {
+  @include bp(sm) {
+    width: 90%;
+  }
+  width: 60%;
+  margin: auto;
+}
+.card-image {
+  position: relative;
+  max-height: 600px;
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
