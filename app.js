@@ -62,7 +62,7 @@ class AboutMe extends React.Component {
           <p className="tab"> lookingForNewRole : true </p>
           <p className="tab"> speciality : "Full Stack Developer", </p>
           <p className="tab"> education : "General Assembly Software Engineering Immersive Program", </p>
-          <p className="tab"> skills : ["JavaScript", "React", "Node.js" "Expressjs", "Angularjs", "Ejs", "CSS", "Sass", "MongoDB", "Mongoose", "PostgreSQL", "MySQL"], </p>
+          <p className="tab"> skills : ["JavaScript", "React", "Node.js" "Expressjs", "Angularjs", "Ejs", "Ruby", "Ruby on Rails", "CSS", "Sass", "MongoDB", "Mongoose", "PostgreSQL", "MySQL"], </p>
           <p className="tab"> professionalBackground : "Former Recruiter and Educator", </p>
           <p className="outer">{"};"}</p>
         </div>
