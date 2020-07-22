@@ -109,6 +109,14 @@ class App extends React.Component {
   state = {
     worksamples: [
       {
+        name: "Component Library",
+        description: "Using React, Ruby on Rails, and PostgreSQL, I built an application that gives developers a platform to save commonly used components and share them with other developers, my version of 'Pinterest' for developers.",
+        techStack: ["JavaScript", "React", "Ruby", "Ruby on Rails", "Sass", "PostgreSQL"],
+        img: "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
+        githublink: "https://github.com/hannahlivnat/ComponentLibrary",
+        deploylink: "https://fathomless-retreat-78559.herokuapp.com/"
+      },
+      {
         name: "CommonPlace",
         description: "Used the MEAN stack and worked with a small group of developers to create a full-stack app intended to provide a digital commonplace for quote and knowledge lovers. Collaborated using Trello and Github.",
         techStack: ["JavaScript", "Angularjs", "Expressjs", "Sass", "Materialize CSS", "MongoDB", "Mongoose", "bcrypt", "dotenv", "express-session"],
