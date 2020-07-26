@@ -40,7 +40,12 @@
 
 .containerdiv {
   @include bp(sm) {
-  grid-template-rows: 50vh 10vh auto 1fr 5vh;
+  grid-template-rows: 50vh 10vh 1fr 5vh;
+  grid-template-areas: 
+  "header"
+  "nav"
+  "work"
+  "footer";
   }
   display: grid;
   grid-template-rows: 75vh 10vh auto 1fr 5vh;
@@ -59,11 +64,15 @@
     grid-area: nav;
   }
   .about-me{
+    @include bp(sm) {
+      display: none;
+    }
     grid-area: aboutme;
+    margin-bottom: 2rem;
   }
   .workheader {
     grid-area: work;
-    padding-top: 5rem;
+    margin-top: 5rem;
   }
   footer {
     grid-area: footer;

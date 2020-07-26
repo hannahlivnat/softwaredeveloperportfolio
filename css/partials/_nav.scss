@@ -1,5 +1,9 @@
 .nav-items {
+
   li a {
+    @include bp(sm) {
+      font-size: .7rem;
+    }
     color: $blue-green;
 
     &:hover {

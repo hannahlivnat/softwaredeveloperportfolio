@@ -11,8 +11,9 @@
 
 @media only screen and (max-width: 620px) {
   .containerdiv {
-    -ms-grid-rows: 50vh 10vh auto 1fr 5vh;
-        grid-template-rows: 50vh 10vh auto 1fr 5vh;
+    -ms-grid-rows: 50vh 10vh 1fr 5vh;
+        grid-template-rows: 50vh 10vh 1fr 5vh;
+        grid-template-areas: "header" "nav" "work" "footer";
   }
 }
 
@@ -32,13 +33,20 @@
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: aboutme;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 620px) {
+  .containerdiv .about-me {
+    display: none;
+  }
 }
 
 .containerdiv .workheader {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: work;
-  padding-top: 5rem;
+  margin-top: 5rem;
 }
 
 .containerdiv footer {
@@ -59,6 +67,12 @@
 
 .nav-items li a {
   color: #5a726e;
+}
+
+@media only screen and (max-width: 620px) {
+  .nav-items li a {
+    font-size: .7rem;
+  }
 }
 
 .nav-items li a:hover {
@@ -151,7 +165,7 @@ header h6 {
 
 @media only screen and (max-width: 620px) {
   .code-snippet-holder .code-snippet {
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -236,7 +250,8 @@ header h6 {
 
 @media only screen and (max-width: 620px) {
   .workheader .viewworkh2 {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin: 1rem 0 1rem 0;
   }
 }
 
@@ -249,6 +264,12 @@ header h6 {
   line-height: 2rem;
   letter-spacing: .02rem;
   padding: 10px 5px;
+}
+
+@media only screen and (max-width: 620px) {
+  .workheader .viewworkp {
+    font-size: 1rem;
+  }
 }
 
 .workheader .viewworkp span {
