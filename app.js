@@ -38,7 +38,9 @@ class WorkSamples extends React.Component {
     const { samples } = this.props
     return <div className="workheader center" id="worksection" >
       <h2 className="viewworkh2">View My Work</h2>
-
+      <p className="viewworkp">The work samples below include site pages developed for the <a href="https://www.hackforla.org/" target="_blank">Hack for Los Angeles</a> website and projects 
+      completed for General Assembly. To demo any project using authentication, you can use the following login:<br/>
+        <span>username:</span> testuser | <span>password:</span> test </p>
       <div className="row worksamples">
         {
           samples.map((sample) => {
@@ -109,22 +111,6 @@ class App extends React.Component {
   state = {
     worksamples: [
       {
-        name: "Component Library",
-        description: "Using React, Ruby on Rails, and PostgreSQL, I built an application that gives developers a platform to save commonly used components and share them with other developers, my version of 'Pinterest' for developers.",
-        techStack: ["JavaScript", "React", "Ruby", "Ruby on Rails", "Sass", "PostgreSQL"],
-        img: "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
-        githublink: "https://github.com/hannahlivnat/ComponentLibrary",
-        deploylink: "https://fathomless-retreat-78559.herokuapp.com/"
-      },
-      {
-        name: "CommonPlace",
-        description: "Used the MEAN stack and worked with a small group of developers to create a full-stack app intended to provide a digital commonplace for quote and knowledge lovers. Collaborated using Trello and Github.",
-        techStack: ["JavaScript", "Angularjs", "Expressjs", "Sass", "Materialize CSS", "MongoDB", "Mongoose", "bcrypt", "dotenv", "express-session"],
-        img: "../assets/commonplace.png",
-        githublink: "https://github.com/tsabz/furry-octo-giggle",
-        deploylink: "https://commonplace333.herokuapp.com/"
-      },
-      {
         name: "Hack For LA Front End",
         description: "Front End Development for Hack for LA Website: Collaborate with a UI/ UX Designer through Figma and updated front-end of website pages.",
         techStack: ["Sass", "CSS", "Bourbon", "Jekyll", "Liquid", "Docker"],
@@ -133,16 +119,24 @@ class App extends React.Component {
         deploylink: "https://www.hackforla.org/project-meetings"
       }, 
       {
-        name: "Portfolio Site",
-        description: "I developed my portfolio site using React, Sass, and the Materialize Framework", 
-        techStack: ["React", "Sass", "CSS", "MaterializeCSS", "JavaScript"],
-        img: "../assets/portfolioshot.png",
-        githublink: "https://github.com/hannahlivnat/softwaredeveloperportfolio",
-        deploylink: "https://hannahlivnat-softwaredeveloper-portfolio.netlify.app/"
+        name: "Component Library",
+        description: "Using React, Ruby on Rails, and PostgreSQL, I built an application that gives developers a platform to save commonly used components and share them with other developers, my version of 'Pinterest' for developers. To demo - username: testuser | password: test",
+        techStack: ["JavaScript", "React", "Ruby", "Ruby on Rails", "Sass", "PostgreSQL"],
+        img: "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
+        githublink: "https://github.com/hannahlivnat/ComponentLibrary",
+        deploylink: "https://fathomless-retreat-78559.herokuapp.com/"
+      },
+      {
+        name: "CommonPlace",
+        description: "Used the MEAN stack and worked with a small group of developers to create a full-stack app intended to provide a digital commonplace for quote and knowledge lovers. Collaborated using Trello and Github. To demo - username: testuser | password: test",
+        techStack: ["JavaScript", "Angularjs", "Expressjs", "Sass", "Materialize CSS", "MongoDB", "Mongoose", "bcrypt", "dotenv", "express-session"],
+        img: "../assets/commonplace.png",
+        githublink: "https://github.com/tsabz/furry-octo-giggle",
+        deploylink: "https://commonplace333.herokuapp.com/"
       },
       {
         name: "SimplyBudget",
-        description: "Used the MEEN stack to create a full-stack CRUD app for budgeting personal monthly income and expenses. SimplyBudget is an answer to the crowd of complicated budgeting apps which make the process of budgeting overwhelming and over-categorized. Rather than tracking each minute category, from your laundry fees to your 'fun money', this app helps you track three main categories: your income, your flex expenses, and your firm expenses.",
+        description: "Used the MEEN stack to create a full-stack CRUD app for budgeting personal monthly income and expenses. SimplyBudget is an answer to the crowd of complicated budgeting apps which make the process of budgeting overwhelming and over-categorized. Rather than tracking each minute category, from your laundry fees to your 'fun money', this app helps you track three main categories: your income, your flex expenses, and your firm expenses. To demo - username: testuser | password: test",
         techStack: ["JavaScript", "EJS", "Expressjs", "Sass", "MongoDB", "Mongoose", "bcrypt", "dotenv", "passport", "express-session"],
         img: "../assets/simplybudget.png",
         githublink: "https://github.com/hannahlivnat/simplebudget",
