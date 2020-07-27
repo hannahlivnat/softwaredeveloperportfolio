@@ -9,8 +9,7 @@ class Footer extends React.Component {
 class WorkSample extends React.Component {
   render = () => {
     const { sample } = this.props;
-    return <div className="col large s12">
-      <div className="card">
+    return <div className="card">
         <div className="card-image waves-effect waves-block waves-light">
           <img src={sample.img} alt={sample.name} />
         </div>
@@ -29,7 +28,6 @@ class WorkSample extends React.Component {
             </ul>
           </div>
         </div>
-      </div>
   }
 }
 
@@ -41,7 +39,7 @@ class WorkSamples extends React.Component {
       <p className="viewworkp">The work samples below include site pages developed for the <a href="https://www.hackforla.org/" target="_blank">Hack for Los Angeles</a> website and projects 
       completed for General Assembly. To demo any project using authentication, you can use the following login:<br/>
         <span>username:</span> testuser | <span>password:</span> test </p>
-      <div className="row worksamples">
+      <div className="worksamples">
         {
           samples.map((sample) => {
             return <WorkSample sample={sample}/>
@@ -111,13 +109,21 @@ class App extends React.Component {
   state = {
     worksamples: [
       {
-        name: "Hack For LA Front End",
+        name: "Hack For LA Project Meetings Page",
         description: "Front End Development for Hack for LA Website: Collaborate with a UI/ UX Designer through Figma and updated front-end of website pages.",
         techStack: ["Sass", "CSS", "Bourbon", "Jekyll", "Liquid", "Docker"],
         img: "../assets/hackforla.png",
-        githublink: "https://github.com/hannahlivnat/ ",
+        githublink: "https://github.com/hackforla/website",
         deploylink: "https://www.hackforla.org/project-meetings"
       }, 
+      {
+        name: "Hack For LA Project Meetings Page",
+        description: "Front End Development for Hack for LA Website: This is a larger page that I completed over a period of two weeks while simultaneously completing my portfolio site and final project for General Assembly. I built the page from scratch referencing a figma file, created several Sass mixins to manage the individual placement of every arrow in relation to images on the guide page, and made the page responsive.",
+        techStack: ["Sass", "CSS", "Bourbon", "Jekyll", "Liquid", "Docker"],
+        img: "https://res.cloudinary.com/huagrzciy/image/upload/e_auto_saturation/v1595888553/project%20screenshots/Screen_Shot_2020-07-27_at_3.19.53_PM_bc6uaq.png",
+        githublink: "https://github.com/hackforla/website ",
+        deploylink: "https://www.hackforla.org/guide-pages/survey-reporting-dashboard-guide"
+      },
       {
         name: "Component Library",
         description: "Using React, Ruby on Rails, and PostgreSQL, I built an application that gives developers a platform to save commonly used components and share them with other developers, my version of 'Pinterest' for developers. To demo - username: testuser | password: test",
