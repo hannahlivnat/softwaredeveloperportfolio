@@ -1,6 +1,5 @@
 .about-me {
   @include bp(1100px) {
-    height: 100vh;
     grid-template-columns: 100%;
     grid-template-rows: 3fr 1fr;
     grid-template-areas: 
@@ -8,7 +7,6 @@
       "connect";
   }
   display: grid;
-  height: 75vh;
   width: 90%;
   margin: auto;
   grid-template-columns: 3fr 1fr;

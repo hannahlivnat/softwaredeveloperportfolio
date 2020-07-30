@@ -40,7 +40,7 @@
 
 .containerdiv {
   @include bp(sm) {
-  grid-template-rows: 50vh 10vh 1fr 5vh;
+  grid-template-rows: 35rem 5rem 1fr 5rem;
   grid-template-areas: 
   "header"
   "nav"
@@ -48,7 +48,7 @@
   "footer";
   }
   display: grid;
-  grid-template-rows: 75vh 10vh auto 1fr 5vh;
+  grid-template-rows: 40rem 10rem auto 1fr 5rem;
   grid-template-columns: 100%;
   grid-template-areas: 
   "header"

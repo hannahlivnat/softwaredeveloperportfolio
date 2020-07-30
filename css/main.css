@@ -1,62 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Mono");
 .containerdiv {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 75vh 10vh auto 1fr 5vh;
-      grid-template-rows: 75vh 10vh auto 1fr 5vh;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-      grid-template-areas: "header" "nav" "aboutme" "work" "footer";
+  grid-template-rows: 40rem 10rem auto 1fr 5rem;
+  grid-template-columns: 100%;
+  grid-template-areas: "header" "nav" "aboutme" "work" "footer";
 }
-
 @media only screen and (max-width: 620px) {
   .containerdiv {
-    -ms-grid-rows: 50vh 10vh 1fr 5vh;
-        grid-template-rows: 50vh 10vh 1fr 5vh;
-        grid-template-areas: "header" "nav" "work" "footer";
+    grid-template-rows: 35rem 5rem 1fr 5rem;
+    grid-template-areas: "header" "nav" "work" "footer";
   }
 }
-
 .containerdiv header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: header;
 }
-
 .containerdiv nav {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   grid-area: nav;
 }
-
 .containerdiv .about-me {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
   grid-area: aboutme;
   margin-bottom: 2rem;
 }
-
 @media only screen and (max-width: 620px) {
   .containerdiv .about-me {
     display: none;
   }
 }
-
 .containerdiv .workheader {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
   grid-area: work;
   margin-top: 5rem;
 }
-
 .containerdiv footer {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
   grid-area: footer;
   background-color: #a6756e;
   color: #f8f9fc;
   font-family: "PT Mono", monospace;
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
@@ -68,13 +46,11 @@
 .nav-items li a {
   color: #5a726e;
 }
-
 @media only screen and (max-width: 620px) {
   .nav-items li a {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }
-
 .nav-items li a:hover {
   background-color: #e2e9e8;
   cursor: pointer;
@@ -82,40 +58,33 @@
 
 header {
   background-color: #f8f9fc;
-  background: no-repeat -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.9))), url("../assets/headerrightimage.jpg");
   background: no-repeat linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../assets/headerrightimage.jpg");
   background-size: cover;
   background-position: bottom 0 left 0;
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
-
 header h4, header h6 {
   font-family: "Open Sans", sans-serif;
   font-size: 6rem;
   color: #f8f9fc;
   text-shadow: 1px 1px 2px #f7cfd5;
-  margin: .4rem 0;
+  margin: 0.4rem 0;
   padding: 0;
 }
-
 @media only screen and (max-width: 620px) {
   header h4, header h6 {
     font-size: 3rem;
   }
 }
-
 header .period {
   color: #a6756e;
   text-shadow: 1px 1px 2px #f7cfd5;
   font-size: 10rem;
 }
-
 header h6 {
   font-size: 2.5rem;
 }
-
 @media only screen and (max-width: 620px) {
   header h6 {
     font-size: 1.5rem;
@@ -123,118 +92,78 @@ header h6 {
 }
 
 .about-me {
-  display: -ms-grid;
   display: grid;
-  height: 75vh;
   width: 90%;
   margin: auto;
-  -ms-grid-columns: 3fr 1fr;
-      grid-template-columns: 3fr 1fr;
-  -ms-grid-rows: 100%;
-      grid-template-rows: 100%;
-      grid-template-areas: "code connect";
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "code connect";
 }
-
 @media only screen and (max-width: 1100px) {
   .about-me {
-    height: 100vh;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-    -ms-grid-rows: 3fr 1fr;
-        grid-template-rows: 3fr 1fr;
-        grid-template-areas: "code" "connect";
+    grid-template-columns: 100%;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "code" "connect";
   }
 }
 
 .code-snippet-holder {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: code;
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
-
 .code-snippet-holder .code-snippet {
   background-color: #a6756e;
-  padding: 1rem .2rem;
+  padding: 1rem 0.2rem;
   width: 75%;
-  -webkit-box-shadow: 2px 2px 4px #ccc;
-          box-shadow: 2px 2px 4px #ccc;
+  box-shadow: 2px 2px 4px #ccc;
 }
-
 @media only screen and (max-width: 620px) {
   .code-snippet-holder .code-snippet {
     width: 95%;
   }
 }
-
 .code-snippet-holder .code-snippet .outer {
   padding-left: 10px;
 }
-
 .code-snippet-holder .code-snippet p {
   font-family: "PT Mono", monospace;
   color: #f8f9fc;
-  letter-spacing: .02rem;
+  letter-spacing: 0.02rem;
   line-height: 2.5rem;
 }
 
 .lets-connect {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: connect;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 .lets-connect h4, .lets-connect header h6, header .lets-connect h6 {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #000;
   font-size: 3rem;
 }
-
 @media only screen and (max-width: 620px) {
   .lets-connect h4, .lets-connect header h6, header .lets-connect h6 {
     font-size: 2rem;
   }
 }
-
 .lets-connect .connect-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-
 @media only screen and (max-width: 620px) {
   .lets-connect .connect-icons {
     width: 40px;
   }
 }
-
 .lets-connect a {
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
 }
-
 .lets-connect a:hover {
   cursor: pointer;
 }
@@ -243,18 +172,16 @@ header h6 {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #5a726e;
-  letter-spacing: .04rem;
+  letter-spacing: 0.04rem;
   font-size: 4rem;
   margin: 3rem 0 1rem 0;
 }
-
 @media only screen and (max-width: 620px) {
   .workheader .viewworkh2 {
     font-size: 2rem;
     margin: 1rem 0 1rem 0;
   }
 }
-
 .workheader .viewworkp {
   width: 70%;
   display: block;
@@ -262,36 +189,30 @@ header h6 {
   font-family: "PT Mono", monospace;
   font-size: 1.5rem;
   line-height: 2rem;
-  letter-spacing: .02rem;
+  letter-spacing: 0.02rem;
   padding: 10px 5px;
 }
-
 @media only screen and (max-width: 620px) {
   .workheader .viewworkp {
     font-size: 1rem;
   }
 }
-
 .workheader .viewworkp span {
   color: #5a726e;
   font-weight: bold;
 }
-
 .workheader .viewworkp a {
   color: #5a726e;
   cursor: pointer;
 }
-
 .workheader .viewworkp a:hover {
   text-decoration: underline;
 }
-
 .workheader .worksamples {
   width: 60%;
   margin: auto;
   margin-bottom: 10rem;
 }
-
 @media only screen and (max-width: 620px) {
   .workheader .worksamples {
     width: 90%;
@@ -302,7 +223,6 @@ header h6 {
   position: relative;
   max-height: 600px;
 }
-
 .card-image img {
   width: 100%;
   height: 100%;
@@ -313,7 +233,6 @@ header h6 {
   place-content: center;
   overflow-x: hidden;
 }
-
 .card-reveal p {
   width: 80%;
   display: block;
@@ -321,30 +240,22 @@ header h6 {
   font-family: "PT Mono", monospace;
   font-size: 1rem;
   line-height: 1.5rem;
-  letter-spacing: .02rem;
+  letter-spacing: 0.02rem;
   background-color: #ded7c4;
   padding: 10px 5px;
 }
-
 .card-reveal ul {
   width: 90%;
   margin: 3rem auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-flow: row wrap;
+  justify-content: center;
 }
-
 .card-reveal ul li {
   color: #a6756e;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   margin: 1rem;
 }
+
 /*# sourceMappingURL=main.css.map */
