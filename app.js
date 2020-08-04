@@ -57,13 +57,11 @@ class AboutMe extends React.Component {
       <div className="code-snippet-holder">
         <div className="code-snippet">
           <p className="outer"> const introduceHannah = {"{"} </p>
-          <p className="tab">aBitAboutMe : "I believe in the power of code to change the systems that run our world for the better, and
-          I aspire to join a team that believes they're doing just that.", </p>
+          <p className="tab">aBitAboutMe : "I'm a Software Engineer / Educator fascinated by the intersection between technology and public policy. I deeply believe in the power of code to transform and improve systems, and I love to nerd out about how digital tools can improve access to education, policy, and public services.", </p>
           <p className="tab"> lookingForNewRole : true </p>
-          <p className="tab"> speciality : "Full Stack Developer", </p>
-          <p className="tab"> education : "General Assembly Software Engineering Immersive Program", </p>
-          <p className="tab"> skills : ["JavaScript", "React", "Node.js" "Expressjs", "Angularjs", "Ejs", "Ruby", "Ruby on Rails", "CSS", "Sass", "MongoDB", "Mongoose", "PostgreSQL", "MySQL"], </p>
-          <p className="tab"> professionalBackground : "Former Recruiter and Educator", </p>
+          <p className="tab"> speciality : "Full-Stack Software Engineer", </p>
+          <p className="tab"> education : "General Assembly Software Engineering Immersive Program and M.A. from Loyola Marymount University", </p>
+          <p className="tab"> tech : ["JavaScript", "React", "Node.js" "Expressjs", "Ejs", "Ruby", "Ruby on Rails", "CSS", "Sass", "MongoDB", "PostgreSQL"], </p>
           <p className="outer">{"};"}</p>
         </div>
       </div>
@@ -99,7 +97,7 @@ class Header extends React.Component {
     return <header className="center">
       <div className="text">
         <h4> Hey There, I'm Hannah<span className="period">.</span> </h4>
-        <h6> Full Stack Developer | Los Angeles</h6>
+        <h6> Software Engineer | Los Angeles</h6>
       </div>
     </header>
   }
