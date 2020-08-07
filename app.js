@@ -128,7 +128,7 @@ class App extends React.Component {
         techStack: ["JavaScript", "React", "Ruby", "Ruby on Rails", "Sass", "PostgreSQL"],
         img: "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
         githublink: "https://github.com/hannahlivnat/ComponentLibrary",
-        deploylink: "https://fathomless-retreat-78559.herokuapp.com/"
+        deploylink: "https://hl-component-library.herokuapp.com/"
       },
       {
         name: "CommonPlace",
@@ -142,7 +142,7 @@ class App extends React.Component {
         name: "SimplyBudget",
         description: "Used the MEEN stack to create a full-stack CRUD app for budgeting personal monthly income and expenses. SimplyBudget is an answer to the crowd of complicated budgeting apps which make the process of budgeting overwhelming and over-categorized. Rather than tracking each minute category, from your laundry fees to your 'fun money', this app helps you track three main categories: your income, your flex expenses, and your firm expenses. To demo - username: testuser | password: test",
         techStack: ["JavaScript", "EJS", "Expressjs", "Sass", "MongoDB", "Mongoose", "bcrypt", "dotenv", "passport", "express-session"],
-        img: "../assets/simplybudget.png",
+        img: "../assets/simplybudget.gif",
         githublink: "https://github.com/hannahlivnat/simplebudget",
         deploylink: "https://simplybudget.herokuapp.com/budgetdetails"
       }
