@@ -53,7 +53,7 @@ class TechWritingSamples extends React.Component {
   render = () => {
     const { writingsamples } = this.props
     return <div className="writingheader center" id="writingsection" >
-      <h2 className="viewwritingh2">Technical Writing</h2>
+      <h2 className="viewwritingh2">Technical Articles</h2>
       <div className="writingsamples">
         {
           writingsamples.map((sample) => {
