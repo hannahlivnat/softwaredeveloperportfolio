@@ -55,10 +55,31 @@
 .card-image {
   position: relative;
   max-height: 600px;
-  img {
+
+  img, source {
     width: 100%;
     height: 100%;
     position: absolute;
+  }
+
+
+}
+
+.card-link {
+  color: $blue-green;
+
+  &:hover {
+    color: $dark-pink;
+  }
+}
+
+.toggle-btn {
+  color: $dark-pink;
+  font-size: 30px;
+
+  &:hover {
+    color: $very-light-green;
+    transform: scale(1.2);
   }
 }
 

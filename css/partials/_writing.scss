@@ -1,0 +1,28 @@
+.writingheader {
+  .viewwritingh2 {
+    @include bp(sm) {
+      font-size: 2rem;
+      margin: 1rem 0 1rem 0;
+    }
+    font-family: $opensans;
+    text-transform: uppercase;
+    color: $blue-green;
+    letter-spacing: .04rem;
+    font-size: 4rem;
+    margin: 3rem 0 1rem 0;
+  }
+
+  .writingsamples {
+    @include bp(sm) {
+      width: 90%;
+    }
+    width: 80%;
+    margin: 3rem auto;
+  }
+
+  .writing-link {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+}
