@@ -1,92 +1,74 @@
 .about-me {
-  @include bp(1100px) {
-    grid-template-columns: 100%;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 
-      "code"
-      "connect";
+  @include bp(sm) {
+    display: none;
   }
+  grid-area: aboutme;
+  background-color: $blue-green;
   display: grid;
-  width: 90%;
-  margin: auto;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 100%;
-  grid-template-areas: "code connect";
-}
+  place-content: center;
 
-.code-snippet-holder {
-  grid-area: code;
-  display: grid;
-  place-items: center;
-  margin-bottom: 3rem;
+  .about-me-description {
+  @include bp(sm) {
+    width: 95%;
+  }
+    width: 80%;
+    margin: 5rem auto 2rem auto;
+    font-family: $opensans;
 
-  .code-snippet {
-    @include bp(sm) {
-      width: 95%;
-    }
-    background-color: $dark-pink;
-    padding: 1rem .2rem;
-    width: 75%;
-    box-shadow: 2px 2px 4px #ccc;
-    
-    .outer {
-      padding-left: 10px;
+
+    h4 {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2.5rem;
+      color: $white;
+      letter-spacing: .02rem;
     }
 
     p {
-      font-family: $ptmono;
       color: $white;
-      letter-spacing: .02rem;
-      line-height: 2.5rem;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      text-align: center;
+    }
 
+    a {
+      text-decoration: none;
+      color: $light-pink;
+
+      &:hover, &:focus{
+        text-decoration: underline;
+      }
     }
   }
 
 }
 
-.lets-connect {
-  grid-area: connect;
+
+.connect-icons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  margin-bottom: 5rem;
+  font-family: $ptmono;
 
-  .profile-img {
-    border-radius: 24px;
-    border: 3px solid #ccc;
-    box-shadow: 2px 2px 4px #ccc;
-    margin-bottom: 1.5rem;
-  }
 
-  h4 {
-    @include bp(sm) {
-      font-size: 2rem;
-    }
-    font-family: $opensans;
-    text-transform: uppercase;
-    color: #000;
-    font-size: 3rem;
-  }
+  p {
+    padding: 0 2rem;
 
-  .connect-icons {
-    @include bp(sm) {
-      width: 40px;
-    }
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+    a {
+      cursor: pointer;
+      color: $blue-green;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      background-color: $white;
+      padding: 4px 6px;
 
-  a {
-    cursor: pointer;
-    padding: 0 .2rem;
-
-    img {
-      &:hover {
-        border-radius: 50%;
-        border: 2px solid $dark-pink;
-        box-shadow: 2px 2px 4px #ccc;
+      &:hover, &:focus {
+        background-color: $light-pink;
+        outline: none;
       }
     }
   }
 }
+

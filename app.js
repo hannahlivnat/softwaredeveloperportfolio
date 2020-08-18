@@ -1,3 +1,38 @@
+
+class Header extends React.Component {
+
+    scrollDown = () => {
+        const targetLoc = window.innerHeight + 5;
+        const scrollOpts = {
+            top: targetLoc,
+            left: 0,
+            behavior: 'smooth',
+        };
+        window.scrollTo(scrollOpts);
+    };
+
+    render = () => {
+        return (
+            <header className="center">
+                <div className="text">
+                    <h4>
+                        {" "}
+                        Hey There, I'm Hannah<span className="period">
+                            .
+                        </span>{" "}
+                    </h4>
+                    <h6> Software Engineer | Los Angeles</h6>
+                </div>
+                <img
+                    className="learn-more"
+                    onClick={this.scrollDown}
+                    src="https://img.icons8.com/wired/64/ffffff/down.png"
+                />
+            </header>
+        );
+    };
+}
+
 class Footer extends React.Component {
   render = () => {
     return <footer>
@@ -8,8 +43,8 @@ class Footer extends React.Component {
 
 class WorkSample extends React.Component {
   render = () => {
-    const { sample } = this.props;
-    return <div className="card">
+    const { sample , i } = this.props;
+    return <div className="card" key={i}>
       <div className="card-image waves-effect waves-block waves-light">
         { (sample.visualtype === "img") ?
             <img src={sample.img} alt="work-sample-image"></img>
@@ -38,8 +73,8 @@ class WorkSample extends React.Component {
 
 class WritingSample extends React.Component {
   render = () => {
-    const { sample } = this.props;
-    return <div className="card writing-sample-card">
+    const { sample, i  } = this.props;
+    return <div className="card writing-sample-card" key={i}>
       <div className="card-content">
         <h4>{sample.name}</h4>
         <p>{sample.description}</p>
@@ -56,8 +91,8 @@ class TechWritingSamples extends React.Component {
       <h2 className="viewwritingh2">Technical Articles</h2>
       <div className="writingsamples">
         {
-          writingsamples.map((sample) => {
-            return <WritingSample sample={sample} />
+          writingsamples.map((sample, i) => {
+            return <WritingSample sample={sample} i = {i} />
           })
 
         }
@@ -69,74 +104,38 @@ class TechWritingSamples extends React.Component {
 class WorkSamples extends React.Component {
   render = () => {
     const { samples } = this.props
-    return <div className="workheader center" id="worksection" >
-      <h2 className="viewworkh2">View My Work</h2>
-      <p className="viewworkp">The work samples below include those developed for the <a href="https://www.hackforla.org/" target="_blank">Hack for Los Angeles</a> website, the <a href="https://www.311-data.org/" target="_blank">311 Data Application</a>, and other solo/group developed applications. To demo any project which includes user authentication, you can use the following login:<br/>
-        <span>username:</span> testuser | <span>password:</span> test </p>
-      <div className="worksamples">
+    return <div className="worksamples">
         {
-          samples.map((sample) => {
-            return <WorkSample sample={sample}/>
+          samples.map((sample, i ) => {
+            return <WorkSample sample={sample} i = {i}/>
           })
         
         }
     </div>
-  </div>
   }
 }
 
 class AboutMe extends React.Component {
   render = () => {
-    return <div className="about-me">
-      <div className="code-snippet-holder">
-        <div className="code-snippet">
-          <p className="outer"> const introduceHannah = {"{"} </p>
-          <p className="tab">aBitAboutMe : "I'm a Software Engineer / Educator fascinated by the intersection between technology and the systems that run our world. I deeply believe in the power of code to transform and improve systems, and I love to nerd out about how digital tools can improve access to education, policy, and public services.", </p>
-          <p className="tab"> lookingForNewRole : true, </p>
-          <p className="tab"> speciality : "Full-Stack Software Engineer", </p>
-          <p className="tab"> education : "General Assembly Software Engineering Immersive Program and M.A. from Loyola Marymount University", </p>
-          <p className="tab"> tech : ["JavaScript", "React", "Node.js" "Expressjs", "Ejs", "Ruby", "Ruby on Rails", "CSS", "Sass", "MongoDB", "PostgreSQL"], </p>
-          <p className="outer">{"};"}</p>
-        </div>
+    return <div className="about-me" id="aboutMe">
+      <div className="about-me-description">
+        <h4> About Me </h4>
+        <p>I'm Hannah, a Software Engineer motivated by the potential for systemic innovation within technology. I love learning and solving tough challenges, and I'm skilled in MERN, MEAN, and Ruby/React.
+        I'm currently working with Hack for Los Angeles, a Civic Tech Organization, on <a href="https://www.311-data.org/" target="_blank">311 Data</a>, and I'm always interested in working on products and services that make our world better.</p>
       </div>
-      <div className="lets-connect center">
-        <img className="profile-img" src="https://res.cloudinary.com/huagrzciy/image/upload/c_scale,w_250/v1596932137/hannahlivnatlinkedin_kkwc1u.jpg" alt="profile-img"/>
-        <h4> Let's Connect </h4>
-        <div className="connect-icons">
-          <p><a href="https://github.com/hannahlivnat" target="_blank"><img src="https://img.icons8.com/ios/50/000000/github.png" /></a></p>
-          <p><a href="https://www.linkedin.com/in/hannah-livnat/" target="_blank"><img src="https://img.icons8.com/fluent/50/000000/linkedin-circled.png" /></a></p>
-          <p><a href="https://twitter.com/hannah_livnat" target="_blank"><img src="https://img.icons8.com/wired/50/000000/twitter-circled.png" /></a></p>
-        </div>
+      <div className="connect-icons">
+        <p><a href="https://github.com/hannahlivnat" target="_blank" className="icon-button">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/hannah-livnat/" target="_blank" className="icon-button">
+        LinkedIn
+        </a></p>
+        <p><a href="mailto:hannahlivnat@gmail.com">Email</a></p>
+        <p><a href="https://docs.google.com/document/d/1xSRm-doSGdCZL6TNkbtThkgDKfl-YvMtUMfm-lZPj3Q/export?format=pdf">Resume</a></p>
       </div>
     </div>
   }
 }
 
-class Nav extends React.Component {
-  render = () => {
-    return <nav className="transparent">
-      <div className="nav-wrapper">
-        {/*<a href="#mobile-demo" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons black-text">menu</i></a>*/}
-        <ul className="nav-items right">
-          <li><a href="#worksection">My Work</a></li>
-          <li><a href="https://docs.google.com/document/d/1xSRm-doSGdCZL6TNkbtThkgDKfl-YvMtUMfm-lZPj3Q/export?format=pdf">Download Resume</a></li>
-          <li><a href="mailto:hannahlivnat@gmail.com">Email Me</a></li>
-        </ul>
-      </div>
-    </nav>
-  }
-}
 
-class Header extends React.Component {
-  render = () => {
-    return <header className="center">
-      <div className="text">
-        <h4> Hey There, I'm Hannah<span className="period">.</span> </h4>
-        <h6> Software Engineer | Los Angeles</h6>
-      </div>
-    </header>
-  }
-}
 
 class App extends React.Component {
   state = {
@@ -213,13 +212,6 @@ class App extends React.Component {
   render = () => {
     return <div className="containerdiv">
       <Header />
-      <Nav />
-      {/* mobile nav links */}
-      <ul className="sidenav" id="mobile-demo">
-        <li><a href="#worksection">My Work</a></li>
-        <li><a href="https://docs.google.com/document/d/1xSRm-doSGdCZL6TNkbtThkgDKfl-YvMtUMfm-lZPj3Q/export?format=pdf">Download Resume</a></li>
-        <li><a href="mailto:hannahlivnat@gmail.com">Email Me</a></li>
-      </ul>
       <AboutMe />
       <WorkSamples samples={this.state.worksamples} />
       <TechWritingSamples writingsamples={this.state.writingsamples}/>
@@ -228,7 +220,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('main')
-)
+ReactDOM.render(<App />, document.querySelector("main"));

@@ -4,33 +4,47 @@ header {
   url('../assets/headerrightimage.jpg');
   background-size: cover;
   background-position: bottom 0 left 0;
-  display: grid;
-  place-items: center;
 
+  .text {
+    position: relative;
+    top: 40%;
 
-  h4 {
-    @include bp(sm) {
-      font-size: 3rem;
+    h4 {
+      @include bp(sm) {
+        font-size: 2.5rem;
+      }
+      font-family: $opensans;
+      font-size: 4rem;
+      color: $white;
+      text-shadow: 1px 1px 2px $light-pink;
+      margin: 1rem 0;
+      padding: 0;
     }
-    font-family: $opensans;
-    font-size: 6rem;
-    color: $white;
-    text-shadow: 1px 1px 2px $light-pink;
-    margin: .4rem 0;
-    padding: 0;
+
+    .period {
+      color: $dark-pink;
+      text-shadow: 1px 1px 2px $light-pink;
+      font-size: 8rem;
+    }
+
+    h6 {
+      @include bp(sm) {
+        font-size: 1.5rem;
+      }
+      @extend h4;
+      font-size: 2rem;
+    }
   }
 
-  .period {
-    color: $dark-pink;
-    text-shadow: 1px 1px 2px $light-pink;
-    font-size: 10rem;
-  }
+  .learn-more {
+    position: relative;
+    top: 70vh;
+    cursor: pointer;
 
-  h6 {
-    @include bp(sm) {
-      font-size: 1.5rem;
+    &:hover {
+      animation: increasesize linear 1s;
+      animation-fill-mode: forwards;
     }
-    @extend h4;
-    font-size: 2.5rem;
+
   }
 }

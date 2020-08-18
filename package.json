@@ -1,0 +1,26 @@
+{
+  "name": "softwaredeveloperportfolio",
+  "version": "1.0.0",
+  "description": "Professional Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannahlivnat/softwaredeveloperportfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannahlivnat/softwaredeveloperportfolio/issues"
+  },
+  "homepage": "https://github.com/hannahlivnat/softwaredeveloperportfolio#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "babel-preset-react-app": "^9.1.2"
+  }
+}

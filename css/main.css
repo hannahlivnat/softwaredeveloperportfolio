@@ -1,44 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Mono");
-.containerdiv {
-  display: grid;
-  grid-template-rows: 40rem 10rem auto 1fr auto 5rem;
-  grid-template-columns: 100%;
-  grid-template-areas: "header" "nav" "aboutme" "work" "writing" "footer";
+@-webkit-keyframes increasesize {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
 }
+@keyframes increasesize {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+.containerdiv {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100vh 50vh 1fr auto 5rem;
+      grid-template-rows: 100vh 50vh 1fr auto 5rem;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+      grid-template-areas: "header" "aboutme" "work" "writing" "footer";
+}
+
 @media only screen and (max-width: 620px) {
   .containerdiv {
-    grid-template-rows: 35rem 5rem 1fr auto 5rem;
-    grid-template-areas: "header" "nav" "work" "writing" "footer";
+    -ms-grid-rows: 100vh 1fr auto 5rem;
+        grid-template-rows: 100vh 1fr auto 5rem;
+        grid-template-areas: "header" "work" "writing" "footer";
   }
 }
+
 .containerdiv header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: header;
 }
-.containerdiv nav {
-  grid-area: nav;
-}
-.containerdiv .about-me {
-  grid-area: aboutme;
-  margin-bottom: 2rem;
-}
-@media only screen and (max-width: 620px) {
-  .containerdiv .about-me {
-    display: none;
-  }
-}
-.containerdiv .workheader {
-  grid-area: work;
-  margin-top: 3rem;
-}
+
 .containerdiv .writingheader {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: writing;
   margin: 2rem 0;
 }
+
 .containerdiv footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
   grid-area: footer;
   background-color: #a6756e;
   color: #f8f9fc;
   font-family: "PT Mono", monospace;
+  display: -ms-grid;
   display: grid;
   place-items: center;
 }
@@ -50,11 +70,13 @@
 .nav-items li a {
   color: #5a726e;
 }
+
 @media only screen and (max-width: 620px) {
   .nav-items li a {
-    font-size: 0.7rem;
+    font-size: .7rem;
   }
 }
+
 .nav-items li a:hover {
   background-color: #e2e9e8;
   cursor: pointer;
@@ -62,173 +84,158 @@
 
 header {
   background-color: #f8f9fc;
+  background: no-repeat -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.9))), url("../assets/headerrightimage.jpg");
   background: no-repeat linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../assets/headerrightimage.jpg");
   background-size: cover;
   background-position: bottom 0 left 0;
-  display: grid;
-  place-items: center;
 }
-header h4, header h6 {
+
+header .text {
+  position: relative;
+  top: 40%;
+}
+
+header .text h4, header .text h6 {
   font-family: "Open Sans", sans-serif;
-  font-size: 6rem;
+  font-size: 4rem;
   color: #f8f9fc;
   text-shadow: 1px 1px 2px #f7cfd5;
-  margin: 0.4rem 0;
+  margin: 1rem 0;
   padding: 0;
 }
+
 @media only screen and (max-width: 620px) {
-  header h4, header h6 {
-    font-size: 3rem;
+  header .text h4, header .text h6 {
+    font-size: 2.5rem;
   }
 }
-header .period {
+
+header .text .period {
   color: #a6756e;
   text-shadow: 1px 1px 2px #f7cfd5;
-  font-size: 10rem;
+  font-size: 8rem;
 }
-header h6 {
-  font-size: 2.5rem;
+
+header .text h6 {
+  font-size: 2rem;
 }
+
 @media only screen and (max-width: 620px) {
-  header h6 {
+  header .text h6 {
     font-size: 1.5rem;
   }
 }
 
-.about-me {
-  display: grid;
-  width: 90%;
-  margin: auto;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 100%;
-  grid-template-areas: "code connect";
+header .learn-more {
+  position: relative;
+  top: 70vh;
+  cursor: pointer;
 }
-@media only screen and (max-width: 1100px) {
+
+header .learn-more:hover {
+  -webkit-animation: increasesize linear 1s;
+          animation: increasesize linear 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.about-me {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: aboutme;
+  background-color: #5a726e;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+@media only screen and (max-width: 620px) {
   .about-me {
-    grid-template-columns: 100%;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: "code" "connect";
+    display: none;
   }
 }
 
-.code-snippet-holder {
-  grid-area: code;
-  display: grid;
-  place-items: center;
-  margin-bottom: 3rem;
+.about-me .about-me-description {
+  width: 80%;
+  margin: 5rem auto 2rem auto;
+  font-family: "Open Sans", sans-serif;
 }
-.code-snippet-holder .code-snippet {
-  background-color: #a6756e;
-  padding: 1rem 0.2rem;
-  width: 75%;
-  box-shadow: 2px 2px 4px #ccc;
-}
+
 @media only screen and (max-width: 620px) {
-  .code-snippet-holder .code-snippet {
+  .about-me .about-me-description {
     width: 95%;
   }
 }
-.code-snippet-holder .code-snippet .outer {
-  padding-left: 10px;
-}
-.code-snippet-holder .code-snippet p {
-  font-family: "PT Mono", monospace;
+
+.about-me .about-me-description h4, .about-me .about-me-description header .text h6, header .text .about-me .about-me-description h6 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
   color: #f8f9fc;
-  letter-spacing: 0.02rem;
-  line-height: 2.5rem;
+  letter-spacing: .02rem;
 }
 
-.lets-connect {
-  grid-area: connect;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.lets-connect .profile-img {
-  border-radius: 24px;
-  border: 3px solid #ccc;
-  box-shadow: 2px 2px 4px #ccc;
-  margin-bottom: 1.5rem;
-}
-.lets-connect h4, .lets-connect header h6, header .lets-connect h6 {
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  color: #000;
-  font-size: 3rem;
-}
-@media only screen and (max-width: 620px) {
-  .lets-connect h4, .lets-connect header h6, header .lets-connect h6 {
-    font-size: 2rem;
-  }
-}
-.lets-connect .connect-icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-@media only screen and (max-width: 620px) {
-  .lets-connect .connect-icons {
-    width: 40px;
-  }
-}
-.lets-connect a {
-  cursor: pointer;
-  padding: 0 0.2rem;
-}
-.lets-connect a img:hover {
-  border-radius: 50%;
-  border: 2px solid #a6756e;
-  box-shadow: 2px 2px 4px #ccc;
-}
-
-.workheader .viewworkh2 {
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  color: #5a726e;
-  letter-spacing: 0.04rem;
-  font-size: 4rem;
-  margin: 3rem 0 1rem 0;
-}
-@media only screen and (max-width: 620px) {
-  .workheader .viewworkh2 {
-    font-size: 2rem;
-    margin: 1rem 0 1rem 0;
-  }
-}
-.workheader .viewworkp {
-  width: 70%;
-  display: block;
-  margin: 2rem auto 5rem auto;
-  font-family: "PT Mono", monospace;
-  font-size: 1.5rem;
+.about-me .about-me-description p {
+  color: #f8f9fc;
+  font-size: 1.2rem;
   line-height: 2rem;
-  letter-spacing: 0.02rem;
-  padding: 10px 5px;
+  text-align: center;
 }
-@media only screen and (max-width: 620px) {
-  .workheader .viewworkp {
-    font-size: 1rem;
-  }
+
+.about-me .about-me-description a {
+  text-decoration: none;
+  color: #f7cfd5;
 }
-.workheader .viewworkp span {
-  color: #5a726e;
-  font-weight: bold;
-}
-.workheader .viewworkp a {
-  color: #5a726e;
-  cursor: pointer;
-}
-.workheader .viewworkp a:hover {
+
+.about-me .about-me-description a:hover, .about-me .about-me-description a:focus {
   text-decoration: underline;
 }
-.workheader .worksamples {
+
+.connect-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5rem;
+  font-family: "PT Mono", monospace;
+}
+
+.connect-icons p {
+  padding: 0 2rem;
+}
+
+.connect-icons p a {
+  cursor: pointer;
+  color: #5a726e;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #f8f9fc;
+  padding: 4px 6px;
+}
+
+.connect-icons p a:hover, .connect-icons p a:focus {
+  background-color: #f7cfd5;
+  outline: none;
+}
+
+.worksamples {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: work;
   width: 60%;
   margin: auto;
   margin-bottom: 10rem;
 }
+
 @media only screen and (max-width: 620px) {
-  .workheader .worksamples {
+  .worksamples {
     width: 90%;
   }
 }
@@ -237,6 +244,7 @@ header h6 {
   position: relative;
   max-height: 600px;
 }
+
 .card-image img, .card-image source {
   width: 100%;
   height: 100%;
@@ -246,6 +254,7 @@ header h6 {
 .card-link {
   color: #5a726e;
 }
+
 .card-link:hover {
   color: #a6756e;
 }
@@ -254,15 +263,18 @@ header h6 {
   color: #a6756e;
   font-size: 30px;
 }
+
 .toggle-btn:hover {
   color: #ded7c4;
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .card-reveal {
   place-content: center;
   overflow-x: hidden;
 }
+
 .card-reveal p {
   width: 80%;
   display: block;
@@ -270,17 +282,26 @@ header h6 {
   font-family: "PT Mono", monospace;
   font-size: 1rem;
   line-height: 1.5rem;
-  letter-spacing: 0.02rem;
+  letter-spacing: .02rem;
   background-color: #ded7c4;
   padding: 10px 5px;
 }
+
 .card-reveal ul {
   width: 90%;
   margin: 3rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .card-reveal ul li {
   color: #a6756e;
   font-family: "Open Sans", sans-serif;
@@ -292,28 +313,31 @@ header h6 {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #5a726e;
-  letter-spacing: 0.04rem;
+  letter-spacing: .04rem;
   font-size: 4rem;
   margin: 3rem 0 1rem 0;
 }
+
 @media only screen and (max-width: 620px) {
   .writingheader .viewwritingh2 {
     font-size: 2rem;
     margin: 1rem 0 1rem 0;
   }
 }
+
 .writingheader .writingsamples {
   width: 80%;
   margin: 3rem auto;
 }
+
 @media only screen and (max-width: 620px) {
   .writingheader .writingsamples {
     width: 90%;
   }
 }
+
 .writingheader .writing-link {
   padding-top: 1rem;
   font-size: 1.2rem;
 }
-
 /*# sourceMappingURL=main.css.map */
