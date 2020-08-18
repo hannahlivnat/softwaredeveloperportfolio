@@ -41,36 +41,6 @@ class Footer extends React.Component {
   }
 }
 
-class WorkSample extends React.Component {
-  render = () => {
-    const { sample , i } = this.props;
-    return <div className="card" key={i}>
-      <div className="card-image waves-effect waves-block waves-light">
-        { (sample.visualtype === "img") ?
-            <img src={sample.img} alt="work-sample-image"></img>
-          :
-            <video><source src={sample.img} type="video/mp4"></source></video>
-        }
-      </div>
-      <div className="card-content">
-        <span className="card-title activator grey-text text-darken-4"><i className="material-icons right toggle-btn">keyboard_arrow_up</i></span>
-        <p><a className="card-link" href={sample.githublink} target="_blank">View Code</a></p>
-        <p><a className="card-link" href={sample.deploylink} target="_blank">View Live App</a></p>
-      </div>
-      <div className="card-reveal">
-        <span className="card-title grey-text text-darken-4"><i className="material-icons right toggle-btn">keyboard_arrow_down
-        </i></span>
-        <p>{sample.description}</p>
-        <ul className="cardul">
-          {sample.techStack.map((tech, index) => {
-            return <li key={index} className="center"> {tech} </li>
-          })}
-        </ul>
-      </div>
-    </div>
-  }
-}
-
 class WritingSample extends React.Component {
   render = () => {
     const { sample, i  } = this.props;
@@ -101,13 +71,65 @@ class TechWritingSamples extends React.Component {
   }
 }
 
+class WorkSample extends React.Component {
+    viewProjectDescription = () => {
+        const contentdiv = document.querySelector(`#content-${this.props.i}`);
+        contentdiv.classList.remove("notHovered");
+        contentdiv.classList.add("hovered");
+    };
+
+    viewProjectPreview = () => {
+        const contentdiv = document.querySelector(`#content-${this.props.i}`);
+        contentdiv.classList.remove("hovered");
+        contentdiv.classList.add("notHovered");
+    };
+
+    render = () => {
+        const { sample, i } = this.props;
+        return (
+            <div className="sample" key={i}>
+                <div className="imageHolder">
+                    <img src={sample.img} alt="work sample image" />
+                </div>
+                <div className="content notHovered" id={`content-${i}`}>
+                    <h4 className="hideOnHover">{sample.name}</h4>
+                    <div className="description">
+                        <p>{sample.description}</p>
+                        <div className="techStack">
+                            {sample.techStack.map((tech, index) => {
+                                return (
+                                    <p key={index} className="skill">
+                                        {tech}
+                                    </p>
+                                );
+                            })}
+                        </div>
+                        <p onClick={this.viewProjectPreview}>Back</p>
+                    </div>
+                    <div className="links hideOnHover">
+                        <p>
+                            <a href={sample.githublink}> Source Code </a>
+                        </p>
+                        <p>
+                            <a href={sample.deploylink}> View Project </a>
+                        </p>
+                        <p onClick={this.viewProjectDescription}>
+                            View Project Description
+                        </p>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+}
+
 class WorkSamples extends React.Component {
   render = () => {
     const { samples } = this.props
     return <div className="worksamples">
         {
           samples.map((sample, i ) => {
-            return <WorkSample sample={sample} i = {i}/>
+            return  <WorkSample sample={sample} i = {i}/>
           })
         
         }
@@ -150,7 +172,7 @@ class App extends React.Component {
         deploylink: "https://www.hackforla.org/project-meetings"
       }, 
       {
-        name: "Hack For LA Project Meetings Page",
+        name: "Hack For LA Guide Page",
         description: "Front End Development for Hack for LA Website: This is a larger page that I completed over a period of two weeks while simultaneously completing my portfolio site and final project for General Assembly. I built the page from scratch referencing a figma file, created several Sass mixins to manage the individual placement of every arrow in relation to images on the guide page, and made the page responsive.",
         techStack: ["Sass", "CSS", "Bourbon", "Jekyll", "Liquid", "Docker"],
         visualtype: "img",
