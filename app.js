@@ -103,10 +103,10 @@ class WorkSample extends React.Component {
                     </div>
                     <div className="links hideOnHover">
                         <p>
-                            <a href={sample.githublink}> Source Code </a>
+                            <a href={sample.githublink} target="_blank"> Source Code </a>
                         </p>
                         <p>
-                            <a href={sample.deploylink}> Live App </a>
+                            <a href={sample.deploylink} target="_blank"> Live App </a>
                         </p>
                         <p >
                             <a onClick={this.viewProjectDescription}> View Details </a>
