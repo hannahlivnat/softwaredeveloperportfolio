@@ -108,8 +108,8 @@ class WorkSample extends React.Component {
                         <p>
                             <a href={sample.deploylink}> Live App </a>
                         </p>
-                        <p onClick={this.viewProjectDescription}>
-                            View Details
+                        <p >
+                            <a onClick={this.viewProjectDescription}> View Details </a>
                         </p>
                     </div>
                 </div>
@@ -180,7 +180,7 @@ class App extends React.Component {
             {
                 name: "311 Data | Accessibility Features",
                 description:
-                    "I have been working on the Front End Development team within Hack for Los Angeles’ 311 Data Application to develop further accessibility and error handling in the application using React and Sass. In the sample shown, I researched and implemented polyfill :focus-visible across the site to add tab accessibility. Through this project, I’ve worked with a cross-disciplinary team of product managers, ui/ux designers, back-end and front-end developers, and qa testers using GitHub projects and weekly stands.",
+                    "Worked with Hack for L.A's 311 Data Application to develop further accessibility and error handling using React and Sass. In the sample shown, I researched and implemented polyfill :focus-visible across the site to add tab accessibility. Through this project, I’ve worked with a cross-disciplinary team of product managers, ui/ux designers, back-end and front-end developers, and qa testers using GitHub projects and weekly stands.",
                 techStack: ["Sass", "Bulma CSS", "React", "Docker"],
                 visualtype: "img",
                 requiresAuthentication: false,
@@ -229,7 +229,7 @@ class App extends React.Component {
             {
                 name: "CommonPlace | MEAN Stack",
                 description:
-                    "Worked remotely with two developers to build MEAN stack application that provides a digital commonplace for quote and knowledge lovers. ",
+                    " CommonPlace is a MEAN Stack application that provides a digital commonplace for quote and knowledge lovers. I worked with two developers in this project to set up authentication and error handling, connect the user collection to the post collection in Mongodb, and establish filtering for private/public posts as well as posts by tag name.",
                 techStack: [
                     "JavaScript",
                     "Angularjs",

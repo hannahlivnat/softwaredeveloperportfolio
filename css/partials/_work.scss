@@ -1,9 +1,10 @@
 .worksamples {
   grid-area: work;
+  box-sizing: border-box;
 
   .sample {
     @include bp(xs) {
-      grid-template-rows: 30rem 25rem;
+      grid-template-rows: 20rem 15rem;
       grid-template-columns: 100%;
       grid-template-areas: 
       "image"
@@ -20,10 +21,18 @@
     grid-template-areas: "image content";
 
     .imageHolder {
+      @include bp(sm) {
+        display: grid;
+        place-content: center;
+      }
       grid-area: image;
       overflow: hidden;
 
+
       img {
+        @include bp(sm) {
+          min-height: 70%;
+        }
         width: 100%;
         min-height: 100%;
         height: auto;
@@ -36,8 +45,16 @@
       @include bp(xs) {
         display: grid;
         place-items: center;
+        width: 99%;
+      }
+      @include bp(sm) {
+        width: 90%;
       }
       grid-area: content;
+      width: 80%;
+      margin: auto;
+      padding: 5px;
+      border-radius: 10px;
       font-family: $opensans;
 
       h4 {

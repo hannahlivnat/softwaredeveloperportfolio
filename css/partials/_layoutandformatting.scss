@@ -40,7 +40,7 @@
 
 .containerdiv {
   display: grid;
-  grid-template-rows: 100vh 50vh 1fr auto 5rem;
+  grid-template-rows: 100vh auto 1fr auto 5rem;
   grid-template-columns: 100%;
   grid-template-areas: 
   "header"
