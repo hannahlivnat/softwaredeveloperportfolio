@@ -93,28 +93,23 @@ class WorkSample extends React.Component {
                 </div>
                 <div className="content notHovered" id={`content-${i}`}>
                     <h4 className="hideOnHover">{sample.name}</h4>
+                    { (sample.requiresAuthentication) ?
+                         <p className="demoInfo hideOnHover">Authentication : testuser / testpassword</p>
+                      :
+                    null }
                     <div className="description">
-                        <p>{sample.description}</p>
-                        <div className="techStack">
-                            {sample.techStack.map((tech, index) => {
-                                return (
-                                    <p key={index} className="skill">
-                                        {tech}
-                                    </p>
-                                );
-                            })}
-                        </div>
-                        <p onClick={this.viewProjectPreview}>Back</p>
+                        <p className="description-text">{sample.description}</p>
+                        <p onClick={this.viewProjectPreview} className="viewOverview">View Overview</p>
                     </div>
                     <div className="links hideOnHover">
                         <p>
                             <a href={sample.githublink}> Source Code </a>
                         </p>
                         <p>
-                            <a href={sample.deploylink}> View Project </a>
+                            <a href={sample.deploylink}> Live App </a>
                         </p>
                         <p onClick={this.viewProjectDescription}>
-                            View Project Description
+                            View Details
                         </p>
                     </div>
                 </div>
@@ -160,86 +155,155 @@ class AboutMe extends React.Component {
 
 
 class App extends React.Component {
-  state = {
-    worksamples: [
-      {
-        name: "Hack For LA Project Meetings Page",
-        description: "Front End Development for Hack for LA Website: Collaborate with a UI/ UX Designer through Figma and updated front-end of website pages.",
-        techStack: ["Sass", "CSS", "Bourbon", "Jekyll", "Liquid", "Docker"],
-        img: "../assets/hackforla.png",
-        visualtype: "img",
-        githublink: "https://github.com/hackforla/website",
-        deploylink: "https://www.hackforla.org/project-meetings"
-      }, 
-      {
-        name: "Hack For LA Guide Page",
-        description: "Front End Development for Hack for LA Website: This is a larger page that I completed over a period of two weeks while simultaneously completing my portfolio site and final project for General Assembly. I built the page from scratch referencing a figma file, created several Sass mixins to manage the individual placement of every arrow in relation to images on the guide page, and made the page responsive.",
-        techStack: ["Sass", "CSS", "Bourbon", "Jekyll", "Liquid", "Docker"],
-        visualtype: "img",
-        img: "https://res.cloudinary.com/huagrzciy/image/upload/e_auto_saturation/v1595888553/project%20screenshots/Screen_Shot_2020-07-27_at_3.19.53_PM_bc6uaq.png",
-        githublink: "https://github.com/hackforla/website ",
-        deploylink: "https://www.hackforla.org/guide-pages/survey-reporting-dashboard-guide"
-      },
-      {
-        name: "Accessibility Features on BETA 311 Data Application",
-        description: "Added tab accessibility to all pages of application using the focus-visible polyfill and Bulma CSS customizable variables. Tested cross-browser functionality using Lambda Tunnel",
-        techStack: ["Sass", "Bulma CSS", "React", "Docker"],
-        visualtype: "img",
-        img: "https://res.cloudinary.com/huagrzciy/image/upload/v1596936057/311-Data_Neighborhood_Engagement_Tool_vdumtk.gif",
-        githublink: "https://github.com/hannahlivnat/311-data",
-        deploylink: "https://www.311-data.org/"
-      },
-      {
-        name: "Component Library",
-        description: "Using React, Ruby on Rails, and PostgreSQL, I built an application that gives developers a platform to save commonly used components and share them with other developers, my version of 'Pinterest' for developers. To demo - username: testuser | password: test",
-        techStack: ["JavaScript", "React", "Ruby", "Ruby on Rails", "Sass", "PostgreSQL"],
-        visualtype: "img",
-        img: "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
-        githublink: "https://github.com/hannahlivnat/ComponentLibrary",
-        deploylink: "https://hl-component-library.herokuapp.com/"
-      },
-      {
-        name: "CommonPlace",
-        description: "Used the MEAN stack and worked with a small group of developers to create a full-stack app intended to provide a digital commonplace for quote and knowledge lovers. Collaborated using Trello and Github. To demo - username: testuser | password: test",
-        techStack: ["JavaScript", "Angularjs", "Expressjs", "Sass", "Materialize CSS", "MongoDB", "Mongoose", "bcrypt", "dotenv", "express-session"],
-        visualtype: "img",
-        img: "../assets/commonplace.png",
-        githublink: "https://github.com/tsabz/furry-octo-giggle",
-        deploylink: "https://commonplace333.herokuapp.com/"
-      },
-      {
-        name: "SimplyBudget",
-        description: "Used the MEEN stack to create a full-stack CRUD app for budgeting personal monthly income and expenses. SimplyBudget is an answer to the crowd of complicated budgeting apps which make the process of budgeting overwhelming and over-categorized. Rather than tracking each minute category, from your laundry fees to your 'fun money', this app helps you track three main categories: your income, your flex expenses, and your firm expenses. To demo - username: testuser | password: test",
-        techStack: ["JavaScript", "EJS", "Expressjs", "Sass", "MongoDB", "Mongoose", "bcrypt", "dotenv", "passport", "express-session"],
-        visualtype: "img",
-        img: "../assets/simplybudget.gif",
-        githublink: "https://github.com/hannahlivnat/simplebudget",
-        deploylink: "https://simplybudget.herokuapp.com/budgetdetails"
-      }
-    ],
-    writingsamples: [
-      {
-        name: "Setting Up Your Collections for Mongoose Populate in a CRUD App",
-        description: "This article walks through the process of setting up Mongoose populate. It's featured in the Medium publication Better Programming.",
-        articlelink: "https://medium.com/better-programming/setting-up-your-collections-for-mongoose-populate-in-a-crud-app-3df9bba3fe7a",
-      },
-      {
-        name: "Why You Keep Getting 'Null' After Running setState() in React",
-        description: "Article featured in JavaScript in Plain English publication on the sometimes asynchronous nature of React's setState",
-        articlelink: "https://medium.com/javascript-in-plain-english/why-you-keep-getting-null-after-running-setstate-in-react-299e1835bd92"
-      }
-    ]
-  }
-  
-  render = () => {
-    return <div className="containerdiv">
-      <Header />
-      <AboutMe />
-      <WorkSamples samples={this.state.worksamples} />
-      <TechWritingSamples writingsamples={this.state.writingsamples}/>
-      <Footer />
-    </div>
-  }
+    state = {
+        worksamples: [
+            {
+                name: "Hack For LA | Guide Page",
+                description:
+                    "Worked off figma file developed by UI/UX designer to build out large guide page for Hack for L.A. website from scratch using Jekyll, Liquid, and Sass and working within a Docker container. This was one page out of several guide pages developed for the site, and I developed 7+ reusable Sass mixins for arrow positioning relative to sibling images on future guide pages.",
+                techStack: [
+                    "Sass",
+                    "CSS",
+                    "Bourbon",
+                    "Jekyll",
+                    "Liquid",
+                    "Docker",
+                ],
+                visualtype: "img",
+                requiresAuthentication: false,
+                img:
+                    "https://res.cloudinary.com/huagrzciy/image/upload/e_auto_saturation/v1595888553/project%20screenshots/Screen_Shot_2020-07-27_at_3.19.53_PM_bc6uaq.png",
+                githublink: "https://github.com/hackforla/website ",
+                deploylink:
+                    "https://www.hackforla.org/guide-pages/survey-reporting-dashboard-guide",
+            },
+            {
+                name: "311 Data | Accessibility Features",
+                description:
+                    "I have been working on the Front End Development team within Hack for Los Angeles’ 311 Data Application to develop further accessibility and error handling in the application using React and Sass. In the sample shown, I researched and implemented polyfill :focus-visible across the site to add tab accessibility. Through this project, I’ve worked with a cross-disciplinary team of product managers, ui/ux designers, back-end and front-end developers, and qa testers using GitHub projects and weekly stands.",
+                techStack: ["Sass", "Bulma CSS", "React", "Docker"],
+                visualtype: "img",
+                requiresAuthentication: false,
+                img:
+                    "https://res.cloudinary.com/huagrzciy/image/upload/v1596936057/311-Data_Neighborhood_Engagement_Tool_vdumtk.gif",
+                githublink: "https://github.com/hannahlivnat/311-data",
+                deploylink: "https://www.311-data.org/",
+            },
+            {
+                name: "ComponentLibrary | React Rails App",
+                description:
+                    "ComponentLibrary is an application for developers to save and share reusable components. Built with React, Ruby on Rails, and PostgreSQL and deployed with Heroku using managed data services. On the back-end, I wrote a function to evaluate frequency of posted tags to generate a dynamic ‘hot list’ of top 5 tags used in posts. On the front-end, I use React-Router for dynamic, client-side routing.",
+                techStack: [
+                    "JavaScript",
+                    "React",
+                    "Ruby",
+                    "Ruby on Rails",
+                    "Sass",
+                    "PostgreSQL",
+                ],
+                visualtype: "img",
+                requiresAuthentication: true,
+                img:
+                    "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
+                githublink: "https://github.com/hannahlivnat/ComponentLibrary",
+                deploylink: "https://hl-component-library.herokuapp.com/",
+            },
+            {
+                name: "Hack For LA | Project Meetings Page",
+                description:
+                    "Took existing project meetings page, which was out of compliance with style guide, and worked with UI/UX designer and project manager to update layout and responsiveness through Sass, Jekyll, and Liquid. Worked locally inside a Docker container. Developed several iterations of mobile site through code reviews with other front-end developers and ui/ux designers.",
+                techStack: [
+                    "Sass",
+                    "CSS",
+                    "Bourbon",
+                    "Jekyll",
+                    "Liquid",
+                    "Docker",
+                ],
+                img: "../assets/hackforla.png",
+                visualtype: "img",
+                requiresAuthentication: false,
+                githublink: "https://github.com/hackforla/website",
+                deploylink: "https://www.hackforla.org/project-meetings",
+            },
+            {
+                name: "CommonPlace | MEAN Stack",
+                description:
+                    "Worked remotely with two developers to build MEAN stack application that provides a digital commonplace for quote and knowledge lovers. ",
+                techStack: [
+                    "JavaScript",
+                    "Angularjs",
+                    "Expressjs",
+                    "Sass",
+                    "Materialize CSS",
+                    "MongoDB",
+                    "Mongoose",
+                    "bcrypt",
+                    "dotenv",
+                    "express-session",
+                ],
+                visualtype: "img",
+                requiresAuthentication: true,
+                img: "../assets/commonplace.png",
+                githublink: "https://github.com/tsabz/furry-octo-giggle",
+                deploylink: "https://commonplace333.herokuapp.com/",
+            },
+            {
+                name: "SimplyBudget | MEEN Stack",
+                description:
+                    "MEEN Stack Budgeting App which uses Mongoose population to join the user collection with documents from the budget detail and budget plan collections dated within the current month, then pass the user into express-session’s req.user after authentication with passport. On the front-end, I've written calculations in JavaScript which determine the percentage of the expected budget which current expenses or income has reached in the current month and display this data dynamically in graph and chart form.",
+                techStack: [
+                    "JavaScript",
+                    "EJS",
+                    "Expressjs",
+                    "Sass",
+                    "MongoDB",
+                    "Mongoose",
+                    "bcrypt",
+                    "dotenv",
+                    "passport",
+                    "express-session",
+                ],
+                requiresAuthentication: true,
+                visualtype: "img",
+                img: "../assets/simplybudget.gif",
+                githublink: "https://github.com/hannahlivnat/simplebudget",
+                deploylink: "https://simplybudget.herokuapp.com/budgetdetails",
+            },
+        ],
+        writingsamples: [
+            {
+                name:
+                    "Setting Up Your Collections for Mongoose Populate in a CRUD App",
+                description:
+                    "This article walks through the process of setting up Mongoose populate. It's featured in the Medium publication Better Programming.",
+                articlelink:
+                    "https://medium.com/better-programming/setting-up-your-collections-for-mongoose-populate-in-a-crud-app-3df9bba3fe7a",
+            },
+            {
+                name:
+                    "Why You Keep Getting 'Null' After Running setState() in React",
+                description:
+                    "Article featured in JavaScript in Plain English publication on the sometimes asynchronous nature of React's setState",
+                articlelink:
+                    "https://medium.com/javascript-in-plain-english/why-you-keep-getting-null-after-running-setstate-in-react-299e1835bd92",
+            },
+        ],
+    };
+
+    render = () => {
+        return (
+            <div className="containerdiv">
+                <Header />
+                <AboutMe />
+                <WorkSamples samples={this.state.worksamples} />
+                <TechWritingSamples
+                    writingsamples={this.state.writingsamples}
+                />
+                <Footer />
+            </div>
+        );
+    };
 }
 
 ReactDOM.render(<App />, document.querySelector("main"));

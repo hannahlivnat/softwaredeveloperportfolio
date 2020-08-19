@@ -30,14 +30,6 @@
       grid-template-areas: "header" "aboutme" "work" "writing" "footer";
 }
 
-@media only screen and (max-width: 800px) {
-  .containerdiv {
-    -ms-grid-rows: 100vh 1fr auto 5rem;
-        grid-template-rows: 100vh 1fr auto 5rem;
-        grid-template-areas: "header" "work" "writing" "footer";
-  }
-}
-
 .containerdiv header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -55,12 +47,13 @@
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: footer;
-  background-color: #a6756e;
+  background-color: #5a726e;
+  border-top: 1px solid #9fab8c;
   color: #f8f9fc;
-  font-family: "PT Mono", monospace;
+  font-family: "Open Sans", sans-serif;
   display: -ms-grid;
   display: grid;
-  place-items: center;
+  place-content: center;
 }
 
 .tab {
@@ -149,12 +142,6 @@ header .learn-more:hover {
   place-content: center;
 }
 
-@media only screen and (max-width: 800px) {
-  .about-me {
-    display: none;
-  }
-}
-
 .about-me .about-me-description {
   width: 80%;
   margin: 5rem auto 2rem auto;
@@ -163,7 +150,7 @@ header .learn-more:hover {
 
 @media only screen and (max-width: 800px) {
   .about-me .about-me-description {
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -231,17 +218,40 @@ header .learn-more:hover {
   grid-area: work;
 }
 
-.worksamples .sample .imageHolder {
-  display: block;
-  width: 100%;
-  height: 50rem;
-  overflow: hidden;
+.worksamples .sample {
+  background-color: #5a726e;
+  padding: 3rem .5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 35rem;
+      grid-template-rows: 35rem;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: "image content";
+}
+
+@media only screen and (max-width: 600px) {
+  .worksamples .sample {
+    -ms-grid-rows: 30rem 25rem;
+        grid-template-rows: 30rem 25rem;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+        grid-template-areas: "image" "content";
+  }
 }
 
 @media only screen and (max-width: 800px) {
-  .worksamples .sample .imageHolder {
-    height: 25rem;
+  .worksamples .sample {
+    -ms-grid-rows: 25rem;
+        grid-template-rows: 25rem;
   }
+}
+
+.worksamples .sample .imageHolder {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+  overflow: hidden;
 }
 
 .worksamples .sample .imageHolder img {
@@ -253,19 +263,42 @@ header .learn-more:hover {
 }
 
 .worksamples .sample .content {
-  width: 100%;
-  height: 20rem;
-  background-color: #5a726e;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: content;
   font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .worksamples .sample .content {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
 }
 
 .worksamples .sample .content h4, .worksamples .sample .content header .text h6, header .text .worksamples .sample .content h6 {
   font-size: 2rem;
+  line-height: 2.5rem;
   color: #f8f9fc;
   margin: 0;
+  text-align: center;
 }
 
-.worksamples .sample .content .techStack {
+@media only screen and (max-width: 600px) {
+  .worksamples .sample .content h4, .worksamples .sample .content header .text h6, header .text .worksamples .sample .content h6 {
+    margin-top: 3rem;
+  }
+}
+
+.worksamples .sample .content .demoInfo {
+  color: #f7cfd5;
+  font-size: 1rem;
+  letter-spacing: .02rem;
+  margin: 1rem .5rem 3rem .5rem;
+}
+
+.worksamples .sample .content .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,16 +308,16 @@ header .learn-more:hover {
           flex-flow: row wrap;
 }
 
-.worksamples .sample .content .techStack p {
+.worksamples .sample .content .links p, .worksamples .sample .content .links a {
   font-size: 1rem;
   color: #f8f9fc;
   letter-spacing: .02rem;
-  margin: 2rem .5rem;
+  margin: 1rem .5rem;
+  cursor: pointer;
 }
 
-.worksamples .sample .content .links p, .worksamples .sample .content .links a {
+.worksamples .sample .content .links p:hover, .worksamples .sample .content .links a:hover {
   color: #f7cfd5;
-  font-size: 1rem;
 }
 
 .worksamples .notHovered {
@@ -315,10 +348,35 @@ header .learn-more:hover {
 
 .worksamples .hovered .hideOnHover {
   display: none;
+  visibility: hidden;
 }
 
 .worksamples .hovered .description {
-  display: block;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.worksamples .hovered .description p {
+  font-size: 1rem;
+  letter-spacing: .02rem;
+  margin: 1rem .5rem;
+  text-align: center;
+}
+
+.worksamples .hovered .description .description-text {
+  background-color: #f8f9fc;
+  color: #5a726e;
+  padding: 5px;
+}
+
+.worksamples .hovered .description .viewOverview {
+  cursor: pointer;
+  color: #f8f9fc;
+}
+
+.worksamples .hovered .description .viewOverview:hover {
+  color: #f7cfd5;
 }
 
 .writingheader .viewwritingh2 {

@@ -1,7 +1,4 @@
 .about-me {
-  @include bp(sm) {
-    display: none;
-  }
   grid-area: aboutme;
   background-color: $blue-green;
   display: grid;
@@ -9,7 +6,7 @@
 
   .about-me-description {
   @include bp(sm) {
-    width: 95%;
+    width: 90%;
   }
     width: 80%;
     margin: 5rem auto 2rem auto;

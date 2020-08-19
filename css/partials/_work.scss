@@ -2,14 +2,25 @@
   grid-area: work;
 
   .sample {
+    @include bp(xs) {
+      grid-template-rows: 30rem 25rem;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+      "image"
+      "content";
+    }
+    @include bp(sm) {
+      grid-template-rows: 25rem;
+    }
+    background-color: $blue-green;
+    padding: 3rem .5rem;
+    display: grid;
+    grid-template-rows: 35rem;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "image content";
 
     .imageHolder {
-      @include bp(sm){
-        height: 25rem;
-      }
-      display: block;
-      width: 100%;
-      height: 50rem;
+      grid-area: image;
       overflow: hidden;
 
       img {
@@ -22,33 +33,44 @@
     }
 
     .content {
-      width: 100%;
-      height: 20rem;
-      background-color: $blue-green;
+      @include bp(xs) {
+        display: grid;
+        place-items: center;
+      }
+      grid-area: content;
       font-family: $opensans;
 
       h4 {
+        @include bp(xs) {
+          margin-top: 3rem;
+        }
         font-size: 2rem;
+        line-height: 2.5rem;
         color: $white;
         margin: 0;
+        text-align: center;
       }
-
-      .techStack {
-        display: flex;
-        flex-flow: row wrap;
-
-        p {
-          font-size: 1rem;
-          color: $white;
-          letter-spacing: .02rem;
-          margin: 2rem .5rem;
-        }
+      .demoInfo {
+        color: $light-pink;
+        font-size: 1rem;
+        letter-spacing: .02rem;
+        margin: 1rem .5rem 3rem .5rem;
       }
 
       .links {
+        display: flex;
+        flex-flow: row wrap;
+
         p, a {
-          color: $light-pink;
           font-size: 1rem;
+          color: $white;
+          letter-spacing: .02rem;
+          margin: 1rem .5rem;
+          cursor: pointer;
+
+          &:hover {
+            color: $light-pink;
+          }
         }
       }
 
@@ -76,9 +98,33 @@
 
         .hideOnHover {
           display: none;
+          visibility: hidden;
         }
+
         .description {
-          display: block;
+          display: grid;
+          place-content: center;
+
+          p {
+            font-size: 1rem;
+            letter-spacing: .02rem;
+            margin: 1rem .5rem;
+            text-align: center;
+          }
+          
+          .description-text {
+            background-color: $white;
+            color: $blue-green;
+            padding: 5px;
+          }
+
+          .viewOverview {
+            cursor: pointer;
+            color: $white;
+            &:hover {
+              color: $light-pink;
+            }
+          }
         }
 }
 
