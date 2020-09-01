@@ -227,6 +227,16 @@ class App extends React.Component {
                 deploylink: "https://www.hackforla.org/project-meetings",
             },
             {
+                name: "Web Scraper | AWS",
+                description: "Collaborated with another developer through Jira to develop the front and back end of a node.js web scraper. I worked primarily on the backend and deployment. We deployed the frontend to AWS s3 and the backend to a AWS lambda function.",
+                techStack: [],
+                img: "./assets/WebScraper.gif",
+                visualtype: "img",
+                requiresAuthentication: false,
+                githublink: "https://github.com/hannahlivnat/Lion-WSA-API/blob/master/index.js",
+                deploylink: "https://lionwebscraper.s3-us-west-1.amazonaws.com/index.html"
+            },
+            {
                 name: "CommonPlace | MEAN Stack",
                 description:
                     " CommonPlace is a MEAN Stack application that provides a digital commonplace for quote and knowledge lovers. I worked with two developers in this project to set up authentication and error handling, connect the user collection to the post collection in Mongodb, and establish filtering for private/public posts as well as posts by tag name.",
