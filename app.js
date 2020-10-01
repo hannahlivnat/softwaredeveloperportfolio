@@ -187,7 +187,7 @@ class App extends React.Component {
                 img:
                     "https://res.cloudinary.com/huagrzciy/image/upload/v1596936057/311-Data_Neighborhood_Engagement_Tool_vdumtk.gif",
                 githublink: "https://github.com/hannahlivnat/311-data",
-                deploylink: "https://www.311-data.org/",
+                deploylink: "http://dev.311-data.org/data",
             },
             {
                 name: "ComponentLibrary | React Rails App",
@@ -227,14 +227,17 @@ class App extends React.Component {
                 deploylink: "https://www.hackforla.org/project-meetings",
             },
             {
-                name: "Web Scraper | AWS",
-                description: "Collaborated with another developer through Jira to develop the front and back end of a node.js web scraper. I worked primarily on the backend and deployment. We deployed the frontend to AWS s3 and the backend to a AWS lambda function.",
-                techStack: [],
-                img: "./assets/WebScraper.gif",
+                name: "311 Data | FAQ Page",
+                description: `Developed 311 Data's FAQ page from scratch using React and Sass. Features include 
+                    additional React route, FAQ data structure loaded in single reusable component, and search bar 
+                    with autocomplete.`,
+                techStack: ["JavaScript", "React", "Sass"],
+                img: "./assets/311data-faq.gif",
                 visualtype: "img",
                 requiresAuthentication: false,
-                githublink: "https://github.com/hannahlivnat/Lion-WSA-API/blob/master/index.js",
-                deploylink: "https://lionwebscraper.s3-us-west-1.amazonaws.com/index.html"
+                githublink:
+                    "https://github.com/hannahlivnat/311-data/tree/dev/client/components/faq",
+                deploylink: "http://dev.311-data.org/faq",
             },
             {
                 name: "CommonPlace | MEAN Stack",
@@ -297,6 +300,13 @@ class App extends React.Component {
                     "Article featured in JavaScript in Plain English publication on the sometimes asynchronous nature of React's setState",
                 articlelink:
                     "https://medium.com/javascript-in-plain-english/why-you-keep-getting-null-after-running-setstate-in-react-299e1835bd92",
+            },
+            {
+                name: "Experiments with Time Complexity in JavaScript",
+                description:
+                    "Article featured in JavaScript in Plan English publication on measuring time complexity.",
+                articlelink:
+                    "https://medium.com/javascript-in-plain-english/experiments-with-time-complexity-in-javascript-56643e20ca12",
             },
         ],
     };
