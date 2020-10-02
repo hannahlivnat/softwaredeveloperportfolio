@@ -158,6 +158,19 @@ class App extends React.Component {
     state = {
         worksamples: [
             {
+                name: "311 Data | FAQ Page",
+                description: `Developed 311 Data's FAQ page from scratch using React and Sass. Features include 
+                    additional React route, FAQ data structure loaded in single reusable component, and search bar 
+                    with autocomplete.`,
+                techStack: ["JavaScript", "React", "Sass"],
+                img: "./assets/311data-faq.gif",
+                visualtype: "img",
+                requiresAuthentication: false,
+                githublink:
+                    "https://github.com/hannahlivnat/311-data/tree/dev/client/components/faq",
+                deploylink: "http://dev.311-data.org/faq",
+            },
+            {
                 name: "Hack For LA | Guide Page",
                 description:
                     "Worked off figma file developed by UI/UX designer to build out large guide page for Hack for L.A. website from scratch using Jekyll, Liquid, and Sass and working within a Docker container. This was one page out of several guide pages developed for the site, and I developed 7+ reusable Sass mixins for arrow positioning relative to sibling images on future guide pages.",
@@ -178,14 +191,15 @@ class App extends React.Component {
                     "https://www.hackforla.org/guide-pages/survey-reporting-dashboard-guide",
             },
             {
-                name: "311 Data | Accessibility Features",
-                description:
-                    "Worked with Hack for L.A's 311 Data Application to develop further accessibility and error handling using React and Sass. In the sample shown, I researched and implemented polyfill :focus-visible across the site to add tab accessibility. Through this project, I’ve worked with a cross-disciplinary team of product managers, ui/ux designers, back-end and front-end developers, and qa testers using GitHub projects and weekly stands.",
+                name: "311 Data | Accessibility Features & Error Handling",
+                description: `Developed accessibility and error handling features using React and Sass. In the sample shown, 
+                I researched and implemented polyfill :focus-visible across the site to add tab accessibility. 
+                I then implemented a reusable error message component for customized messaging and front-end form check logic
+                to prevent submission of incorrect back-end requests`,
                 techStack: ["Sass", "Bulma CSS", "React", "Docker"],
                 visualtype: "img",
                 requiresAuthentication: false,
-                img:
-                    "https://res.cloudinary.com/huagrzciy/image/upload/v1596936057/311-Data_Neighborhood_Engagement_Tool_vdumtk.gif",
+                img: "../assets/311data_accessibility.gif",
                 githublink: "https://github.com/hannahlivnat/311-data",
                 deploylink: "http://dev.311-data.org/data",
             },
@@ -203,41 +217,9 @@ class App extends React.Component {
                 ],
                 visualtype: "img",
                 requiresAuthentication: true,
-                img:
-                    "https://res.cloudinary.com/huagrzciy/image/upload/v1595369806/Screen_Shot_2020-07-21_at_3.16.24_PM_ihbipm.png",
+                img: "../assets/componentlibrary.gif",                
                 githublink: "https://github.com/hannahlivnat/ComponentLibrary",
                 deploylink: "https://hl-component-library.herokuapp.com/",
-            },
-            {
-                name: "Hack For LA | Project Meetings Page",
-                description:
-                    "Took existing project meetings page, which was out of compliance with style guide, and worked with UI/UX designer and project manager to update layout and responsiveness through Sass, Jekyll, and Liquid. Worked locally inside a Docker container. Developed several iterations of mobile site through code reviews with other front-end developers and ui/ux designers.",
-                techStack: [
-                    "Sass",
-                    "CSS",
-                    "Bourbon",
-                    "Jekyll",
-                    "Liquid",
-                    "Docker",
-                ],
-                img: "../assets/hackforla.png",
-                visualtype: "img",
-                requiresAuthentication: false,
-                githublink: "https://github.com/hackforla/website",
-                deploylink: "https://www.hackforla.org/project-meetings",
-            },
-            {
-                name: "311 Data | FAQ Page",
-                description: `Developed 311 Data's FAQ page from scratch using React and Sass. Features include 
-                    additional React route, FAQ data structure loaded in single reusable component, and search bar 
-                    with autocomplete.`,
-                techStack: ["JavaScript", "React", "Sass"],
-                img: "./assets/311data-faq.gif",
-                visualtype: "img",
-                requiresAuthentication: false,
-                githublink:
-                    "https://github.com/hannahlivnat/311-data/tree/dev/client/components/faq",
-                deploylink: "http://dev.311-data.org/faq",
             },
             {
                 name: "CommonPlace | MEAN Stack",
